@@ -1,14 +1,11 @@
-import './App.css'
+import Routers from "./routes/Routers";
 
 function App() {
-
   return (
-    <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
-  )
+      <div>
+        <Routers />
+      </div>
+  );
 }
 
-export default App
+export default App;
