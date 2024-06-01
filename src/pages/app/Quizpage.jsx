@@ -20,38 +20,34 @@ function Quizpage() {
 
         const data = await res.json();
         setQuestions(data);
-
-      } catch (err) {  
+      } catch (err) {
         console.err(err.message);
-        setError(err.message)
-      }
-      finally{
-        setisLoading(false)
+        setError(err.message);
+      } finally {
+        setisLoading(false);
       }
     }
 
     fetchQuestions();
   }, []);
 
-
-  function Loader(){
-    return <p>Loading...</p>
+  function Loader() {
+    return <p>Loading...</p>;
   }
 
   // eslint-disable-next-line react/prop-types
-  function ErrorMessage({message}) {
-    return <p>{message}</p>
-  } 
+  function ErrorMessage({ message }) {
+    return <p>{message}</p>;
+  }
 
-  
-
-  return <div>
-    <p>WELCOME</p>
-    {/* {isloading ? <Loader  />: "juy"} */}
-    { isloading && !error && <p>Questions</p>}
-    { error && <ErrorMessage message={error} />}
-    
-  </div>;
+  return (
+    <div>
+      <p>WELCOME</p>
+      {isloading && <Loader />}
+      {!isloading && !error && <p>Questions</p>}
+      {error && <ErrorMessage message={error} />}
+    </div>
+  );
 }
 
 export default Quizpage;
