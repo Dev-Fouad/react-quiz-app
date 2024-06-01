@@ -38,6 +38,7 @@ function Quizpage() {
     return <p>Loading...</p>
   }
 
+  // eslint-disable-next-line react/prop-types
   function ErrorMessage({message}) {
     return <p>{message}</p>
   } 
@@ -46,7 +47,9 @@ function Quizpage() {
 
   return <div>
     <p>WELCOME</p>
-    {isloading ? <Loader />: "juy"}
+    {/* {isloading ? <Loader  />: "juy"} */}
+    { isloading && !error && <p>Questions</p>}
+    { error && <ErrorMessage message={error} />}
     
   </div>;
 }
