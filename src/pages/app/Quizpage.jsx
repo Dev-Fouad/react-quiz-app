@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import LoadingSpinner from "../../components/reusables/LoadingSpinner";
+import QuestionsList from "./QuestionsList";
 
 function Quizpage() {
   // State hooks for managing loading status, error messages, and questions data
@@ -37,12 +39,16 @@ function Quizpage() {
       }
     }
 
-    // Call the fetchQuestions function
+  // Call the fetchQuestions function
     fetchQuestions();
   }, []);
 
   function Loader() {
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   // eslint-disable-next-line react/prop-types
@@ -52,9 +58,10 @@ function Quizpage() {
 
   return (
     <div>
-      <p>WELCOME</p>
       {isloading && <Loader />}
-      {!isloading && !error && <p>Questions</p>}
+      {!isloading && !error && (
+        <QuestionsList />
+      )}
       {error && <ErrorMessage message={error} />}
     </div>
   );
