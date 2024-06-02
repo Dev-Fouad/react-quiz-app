@@ -7,7 +7,7 @@ function QuestionsList({ questions }) {
   const [userAnswers, setUserAnswers] = useState([]);
   const navigate = useNavigate();
 
-  console.log(questions);
+  // console.log(questions);
 
   const handleAnswerClick = (answer) => {
     setUserAnswers([...userAnswers, answer]);
@@ -25,7 +25,7 @@ function QuestionsList({ questions }) {
         {questions[currentQuestionIndex].category}
       </h2>
 
-      <div className="border-2  w-[70%] border-black p-8 mt-[20px] ">
+      <div className="border-2  w-[70%] border-black p-8 mt-[20px] text-center ">
         Question {currentQuestionIndex + 1}:{" "}
         {questions[currentQuestionIndex].question}
         <div className="flex space-x-6 justify-center pt-[30px]">

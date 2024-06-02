@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "../pages/app/Homepage";
 // import Quizpage from "../pages/app/Quizpage";
 import QuestionsList from "../pages/app/QuestionsList";
+import Resultspage from "../pages/app/Resultspage";
 
 function Routers() {
   const questions = [
@@ -143,7 +144,7 @@ function Routers() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/quiz" element={<QuestionsList questions={questions} />} />
-        <Route></Route>
+        <Route path="/results" element={<Resultspage />} />
       </Routes>
     </Router>
   );
