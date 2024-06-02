@@ -1,68 +1,31 @@
+// eslint-disable-next-line react/prop-types
 import { useEffect, useState } from "react";
-import LoadingSpinner from "../../components/reusables/LoadingSpinner";
 import QuestionsList from "./QuestionsList";
+import ErrorMessage from "../../components/Error";
+import Loader from "../../components/Loader";
+import fetchQuestions from "../../utils/ApiService";
 
 function Quizpage() {
-  // State hooks for managing loading status, error messages, and questions data
-  const [isloading, setisLoading] = useState(false);
+  const [isloading, setisLoading] = useState(true);
   const [error, setError] = useState("");
   const [questions, setQuestions] = useState([]);
 
-  // useEffect hook for fetching questions when the component mounts
   useEffect(() => {
-    async function fetchQuestions() {
-      try {
-        // Set loading state to true before starting the fetch operation
-        setisLoading(true);
-
-        // Fetch questions from the API
-        const res = await fetch(
-          "https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean"
-        );
-
-        // Throw an error if the response is not ok
-        if (!res.ok)
-          throw new Error("Something went wrong with fetching questions");
-
-        // Parse the JSON data from the response
-        const data = await res.json();
-
-        // Set the questions state with the fetched data
-        setQuestions(data.results);
-      } catch (err) {
-        // Log the error and set the error state
-        console.err(err.message);
-        setError(err.message);
-      } finally {
-        // Set loading state to false after the fetch operation completes
-        setisLoading(false);
-      }
-    }
-
-  // Call the fetchQuestions function
-    fetchQuestions();
+    InitializeQuestion();
   }, []);
 
-  // Our Loading Function
-  function Loader() {
-    return (
-      <div>
-        <LoadingSpinner />
-      </div>
-    );
+  async function InitializeQuestion() {
+    const { result, error } = await fetchQuestions();
+    setQuestions(result);
+    setError(error);
+    setisLoading(false);
   }
 
-  // eslint-disable-next-line react/prop-types
-  function ErrorMessage({ message }) {
-    return <p>{message}</p>;
-  }
+  if (isloading) return <Loader />;
 
   return (
     <div>
-      {isloading && <Loader />}
-      {!isloading && !error && (
-        <QuestionsList questions={questions} />
-      )}
+      {!isloading && !error && <QuestionsList questions={questions} />}
       {error && <ErrorMessage message={error} />}
     </div>
   );
