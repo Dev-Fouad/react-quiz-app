@@ -7,6 +7,8 @@ function QuestionsList({ questions }) {
   const [userAnswers, setUserAnswers] = useState([]);
   const navigate = useNavigate();
 
+  console.log(questions);
+
   const handleAnswerClick = (answer) => {
     setUserAnswers([...userAnswers, answer]);
     if (currentQuestionIndex + 1 < questions.length) {

@@ -143,6 +143,7 @@ function Routers() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/quiz" element={<QuestionsList questions={questions} />} />
+        <Route></Route>
       </Routes>
     </Router>
   );
