@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LoadingSpinner from "../../components/reusables/LoadingSpinner";
 import QuestionsList from "./QuestionsList";
 
@@ -43,6 +43,7 @@ function Quizpage() {
     fetchQuestions();
   }, []);
 
+  // Our Loading Function
   function Loader() {
     return (
       <div>
@@ -60,7 +61,7 @@ function Quizpage() {
     <div>
       {isloading && <Loader />}
       {!isloading && !error && (
-        <QuestionsList />
+        <QuestionsList questions={questions} />
       )}
       {error && <ErrorMessage message={error} />}
     </div>
