@@ -28,7 +28,7 @@ function QuestionsList({ questions = [] }) {
   if (!isValid) return <ErrorMessage error="No questions present" />;
 
   return (
-    <div className="font-mono flex flex-col items-center justify-center h-screen">
+    <div className="font-mono flex flex-col items-center justify-center h-[100%]">
       <h2 className=" text-[30px] text-black max-md:text-[25px] font-mono text-center font-bold">
         {currentQuestion?.category}
       </h2>
