@@ -1,6 +1,10 @@
 // eslint-disable-next-line react/prop-types
 function ErrorMessage({ message }) {
-  return <p className=" text-red-800 text-center text-[30px]">{message}</p>;
+  return (
+    <div className="flex text-[28px] font-mono">
+        <p className=" text-red-800">{message}</p>;
+    </div>
+  ) 
 }
 
 export default ErrorMessage;
