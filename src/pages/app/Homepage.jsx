@@ -31,7 +31,7 @@ import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
+    <div className="flex items-center overflow-y-hidden justify-center h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
       <div className="bg-white shadow-lg rounded-lg p-4 sm:p-10 max-w-lg w-full mx-4 max-h-full overflow-y-auto">
         <h1 className="text-4xl font-bold mb-6 text-center font-mono text-gray-800">
           Welcome to the Trivia Challenge!
