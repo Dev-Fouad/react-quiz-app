@@ -3,7 +3,7 @@ function Homepage() {
   return (
     <div className="flex px-[20px] items-center justify-center overflow-hidden h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600
     ">
-      <div className="bg-white shadow-lg rounded-lg p-[20px] sm:p-10 max-w-lg w-full">
+      <div className="bg-white p-[20px] sm:p-10 max-w-lg w-full">
         <h1 className="text-4xl font-bold mb-6 text-center font-mono text-gray-800">
           Welcome to the Trivia Challenge!
         </h1>
