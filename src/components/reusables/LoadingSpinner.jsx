@@ -1,8 +1,19 @@
-import "./Loading.css"
+import "./Loading.css";
 
 const LoadingSpinner = () => {
   return (
-    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div className="justify-center items-center flex h-screen">
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   );
 };
 

@@ -28,12 +28,12 @@ function QuestionsList({ questions = [] }) {
   if (!isValid) return <ErrorMessage error="No questions present" />;
 
   return (
-    <div className="font-mono flex flex-col items-center justify-center py-[50px] ">
+    <div className="font-mono flex flex-col items-center justify-center h-screen">
       <h2 className=" text-[30px] text-black max-md:text-[25px] font-mono text-center font-bold">
         {currentQuestion?.category}
       </h2>
 
-      <div className="border-2  w-[70%] border-black p-8 mt-[20px] text-center ">
+      <div className="border-2  w-[70%] max-sm:w-[80%] border-black p-8  max-sm:p-[20px] mt-[20px] text-center ">
         Question {currentQuestionIndex + 1}: {currentQuestion?.question}
         <div className="flex space-x-6 justify-center pt-[30px]">
           <button

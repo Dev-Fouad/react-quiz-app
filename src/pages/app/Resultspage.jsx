@@ -8,7 +8,7 @@ function Resultspage() {
   const correctAnswersCount = userAnswers.filter(
     (answer, index) => answer === questions[index].correct_answer
   ).length;
-  console.log(correctAnswersCount);
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="bg-white p-6 rounded-lg shadow-md text-center w-full max-w-2xl">
