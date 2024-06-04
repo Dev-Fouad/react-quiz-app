@@ -17,7 +17,6 @@ function Resultslist({ question, userAnswer, correctAnswer, index }) {
       <p>
         <strong>Correct Answer:</strong> {correctAnswer}
       </p>
-
     </li>
   );
 }
